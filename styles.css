@@ -1,0 +1,653 @@
+/* Base Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Work Sans', sans-serif;
+}
+
+:root {
+    --h1-font: 5rem;
+    --h2-font: 2.9rem;
+    --p-font: 1.1rem;
+
+    /* Light Mode Colors */
+    --bg-color-light: #ffffff;
+    --text-color-light: #333;
+    --main-color-light: #d50032;
+    --other-color-light: #6e6e6e;
+
+    /* Dark Mode Colors */
+    --bg-color-dark: #000000;
+    --text-color-dark: #ffffff;
+    --main-color-dark: #d50032;
+    --other-color-dark: #d6d6d6;
+}
+
+/* Default to Dark Mode */
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('pexels-eberhardgross-1612351.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-color-dark);
+    font-size: 16px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: padding 0.5s ease, background 0.5s ease;
+}
+
+header.sticky {
+    padding: 10px 5%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.logo img {
+    width: 120px;
+    transition: width 0.5s ease;
+}
+
+header.sticky .logo img {
+    width: 100px;
+}
+
+.navbar {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    padding: 10px 20px;
+    font-size: var(--p-font);
+    font-weight: 400;
+    color: var(--other-color-dark);
+    transition: color 0.4s ease, background-color 0.4s ease;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    color: var(--text-color-dark);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.h-btn {
+    display: flex;
+    align-items: center;
+}
+
+.h-btn1, .h-btn2 {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 20px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.h-btn1 {
+    background: var(--main-color-dark);
+    color: var(--text-color-dark);
+}
+
+.h-btn2 {
+    background: var(--main-color-dark);
+    color: var(--text-color-dark);
+}
+
+#menu-icon {
+    color: var(--text-color-dark);
+    font-size: 36px;
+    margin-left: 5px;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+/* Light Mode Styles */
+@media (prefers-color-scheme: light) {
+    body {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('pexels-eberhardgross-1612351.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: var(--text-color-light);
+    }
+
+    header {
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    .navbar a {
+        color: var(--other-color-light);
+    }
+
+    .navbar a:hover {
+        color: var(--text-color-light);
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .h-btn1, .h-btn2 {
+        background: var(--main-color-light);
+        color: var(--text-color-light);
+    }
+}
+
+/* Home Section Styles */
+/* Home Section Styles */
+.home {
+    padding: 80px 15% 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Aligns image and text side by side */
+    align-items: stretch; /* Ensures both text and image stretch to the same height */
+    gap: 2rem; /* Space between image and text */
+    justify-content: space-between; /* Distributes space evenly between image and text */
+}
+
+
+.home-img {
+    flex: 1; /* Allow the image to take up equal space */
+    display: flex;
+    justify-content: center; /* Center the image within its container */
+}
+
+.home-img img {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    height: 100%; /* Ensures the image stretches to match the height of its container */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+}
+
+.home-img img:hover {
+    transform: scale(1.05); /* Slightly scale up the image on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to enhance the popup effect */
+}
+
+
+.home-text {
+    flex: 1; /* Allow the text to take up equal space */
+    display: flex;
+    flex-direction: column; /* Aligns text content vertically */
+    justify-content: center; /* Center text vertically within its container */
+    text-align: left; /* Align text to the left */
+}
+
+.home-text h1 {
+    font-size: var(--h2-font); 
+    color:var(--main-color-light);/* Adjust font size for h1 */
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.home-text p {
+    font-size: var(--p-font);
+    color: var(--other-color-dark);
+    line-height: 22.5px;
+    margin-bottom: 1.5rem;
+}
+
+
+.h-search {
+    width: 100%; /* Ensure the search bar spans the full width of the screen */
+    margin-top: 10px;
+    text-align: center; /* Centers the form container */
+    padding: 0 3%; /* Reduce padding to allow for a longer search bar */
+    box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+.h-search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Limit the maximum width to make it similar to Google's search bar */
+    margin: 0 auto;
+    padding: 14px 20px; /* Slightly increase padding to make space for a thicker border */
+    border-radius: 25px; /* Rounded edges around the entire form */
+    border: 2px solid rgba(255, 255, 255, 0.4); /* Adds a thicker border around the form */
+    background: rgba(255, 255, 255, 0.2); /* Slightly transparent white background */
+    backdrop-filter: blur(10px); /* Adds a glassy effect by blurring the background */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+}
+
+/* Style the search input */
+.h-search form input[type="search"] {
+    width: calc(100% - 150px);
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--text-color-dark);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the suggestions dropdown */
+#suggestions {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-color-dark);
+    padding: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.h-search form input[type="submit"] {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color-dark);
+    background: linear-gradient(145deg, #d50032, #ff4c61); /* Adds a gradient effect */
+    border-radius: 30px; /* Rounded edges */
+    border: 2px solid rgba(255, 255, 255, 0.4); /* Adds a thicker border around the button */
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 0px 15px rgba(255, 0, 50, 0.5); /* Adds a subtle shadow */
+}
+
+.h-search form input[type="submit"]:hover {
+    background: linear-gradient(145deg, #ff4c61, #d50032); /* Reverse gradient on hover */
+    box-shadow: 0px 0px 20px rgba(255, 0, 50, 0.7); /* Stronger shadow on hover */
+}
+
+/* Feature Section Styles */
+.feature {
+    padding: 60px 15% 50px;
+    background-color: transparent;
+    color: var(--text-color-dark);
+    text-align: center;
+}
+
+.feature h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 20px;
+    color: var(--main-color-dark);
+}
+
+.feature-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.f-img img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.f-img img:hover {
+    transform: scale(1.05);
+    box-shadow: transparent;
+}
+.property-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: start; /* Aligns items at the top */
+    gap: 2rem;
+    margin-top: 4.5rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center items horizontally */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for visual separation */
+}
+
+.image-container {
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.row img {
+    width: 100%; /* Makes the image fit within the container */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 200px; /* Sets a maximum width for medium-sized images */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.row img:hover {
+    transform: scale(1.05); /* Slightly zoom in the image on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow for a more pronounced hover effect */
+}
+
+.text-content {
+    text-align: center; /* Centers the text horizontally */
+}
+
+.row h5 {
+    font-size: 18px; /* Font size for headings */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.row p {
+    font-size: var(--p-font);
+    color: var(--other-color);
+    margin-bottom: 20px;
+}
+
+.list {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    gap: 1rem; /* Space between list items */
+}
+.list a{
+    color: var(--text-color);
+    font-size: var(--p-font);
+}
+.residence-list i
+{
+    font-size: 18px;
+    color: #d6d6d6;
+}
+.center-btn {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 18px 28px;
+    background: var(--main-color);
+    color: var(--text-color);
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none; /* Ensures no underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease;
+    cursor: pointer; /* Pointer cursor on hover */
+    transform: translateY(-3px) scale(1); /* Fix transform values */
+}
+
+.btn:hover {
+    background: var(--main-color-dark); /* Darker background on hover */
+    transform: translateY(-5px) scale(1.05); /* Slightly lift and scale up on hover */
+}
+
+.btn:active {
+    background: var(--main-color-darker); /* Even darker background when clicked */
+    transform: translateY(-1px) scale(1); /* Slightly adjust on click */
+}
+.center-left {
+    text-align: center; /* Centers the text horizontally */
+    font-size: var(--h2-font); /* Applies the font size from the variable */
+    color: var(--main-color-light); /* Applies the text color from the variable */
+    margin-top: 4rem; /* Adds space above the section */
+    margin-bottom: 2rem; /* Adds space below the section */
+}
+.about {
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+}
+
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+.about-text h2 {
+    font-size: var(--h2-font);
+    color: var(--main-color-light);
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: var(--p-font);
+    color: var(--other-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.about-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about-text .btn:hover {
+    background-color: var(--main-color-dark);
+}
+.about-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.subscribe {
+    background: url(img/neon-city-background-gn7lnifuajt2fee4.png) no-repeat center center/cover;
+    border: transparent;
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.subscribe-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subscribe-content h2 {
+    font-size: var(--h2-font);
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.subscribe-content p {
+    font-size: var(--p-font);
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    font-size: var(--p-font);
+}
+
+.subscribe-form button {
+    padding: 0.8rem 1.5rem;
+    background: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: var(--p-font);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background: var(--main-color-dark);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background-color: translucent;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.contact-content h4{
+    font-color:var(--main-color-dark);
+}
+.contact-content img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.contact-content p {
+    color: var(--other-color);
+    font-size: var(--p-font);
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.icons a {
+    color: var(--main-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.icons a:hover {
+    color: var(--main-color-dark);
+}
+
+.contact-content h4 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--main-color);
+}
+
+.contact-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-content ul li a {
+    color: var(--other-color);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-content ul li a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+@media(max-width:1170px)
+{
+    #menu-icon
+    {
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top:100%;
+        right: -100%;
+        width: 270px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: #333;
+        padding: 20px 15px;
+        gap: 0.5rem;
+        text-align: left;
+        transition: all .50s ease;
+    }
+    .navbar a 
+    {
+        display: block;
+        font-size: 20px;
+        padding: 15px;
+    }
+    .navbar.property-content{
+        right: 0;
+    }
+    :root {
+        --h1-font: 4rem;
+        --h2-font: 2rem;
+        --p-font:1rem;
+    }
+    .home 
+    {
+        grid-template-columns: 1fr;
+        gap:1rem;
+        height: 120vh;
+    }
+    .home-text{
+        order: 2;
+        width:100% ;
+        max-width: 900px;
+    }
+    .home-img{
+        width:480px;
+        height: 480px;
+        margin: 0 auto;
+        padding-top : 20px;
+    }
+    .about{
+        grid-template-columns: 1fr;
+    }
+
+}
